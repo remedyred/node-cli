@@ -19,7 +19,7 @@ specifiers:
 
 dependencies:
   '@snickbit/node-utilities': 4.4.2
-  '@snickbit/out': 2.0.37
+  '@snickbit/out': link:../out
   '@snickbit/utilities': 3.2.0
   lilconfig: 2.0.6
   yargs-parser: 21.0.1
@@ -30,7 +30,7 @@ devDependencies:
   '@types/node': 18.6.4
   jest: 28.1.3_@types+node@18.6.4
   shx: 0.3.4
-  ts-jest: 28.0.7_bi2kohzqnxavgozw3csgny5hju
+  ts-jest: 28.0.7_u6vaoq52drjnva57vfims6gz2u
   tsup: 6.2.1_typescript@4.7.4
   typedoc: 0.23.10_typescript@4.7.4
   typedoc-plugin-markdown: 3.13.4_typedoc@0.23.10
@@ -2871,7 +2871,7 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /ts-jest/28.0.7_bi2kohzqnxavgozw3csgny5hju:
+  /ts-jest/28.0.7_u6vaoq52drjnva57vfims6gz2u:
     resolution: {integrity: sha512-wWXCSmTwBVmdvWrOpYhal79bDpioDy4rTT+0vyUnE3ZzM7LOAAGG9NXwzkEL/a516rQEgnMmS/WKP9jBPCVJyA==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -2892,7 +2892,9 @@ packages:
       esbuild:
         optional: true
     dependencies:
+      '@babel/core': 7.18.10
       bs-logger: 0.2.6
+      esbuild: 0.14.53
       fast-json-stable-stringify: 2.1.0
       jest: 28.1.3_@types+node@18.6.4
       jest-util: 28.1.3
