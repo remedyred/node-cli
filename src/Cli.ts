@@ -106,11 +106,7 @@ export class Cli<T extends ParsedArgs = any> {
 
 			if (option === 'out') {
 				// Out specific setter
-				if (value instanceof Out) {
-					this.appOut = value
-				} else {
-					this.appOut = new Out(value)
-				}
+				this.appOut = value instanceof Out ? value : new Out(value)
 			} else if (option === 'name') {
 				// Name specific setter
 				this.state.name = value
@@ -465,7 +461,7 @@ export class Cli<T extends ParsedArgs = any> {
 
 		if (!isEmpty(this.state.options)) {
 			helpOut('Options:')
-			for (let [name, item] of Object.entries(this.state.options)) {
+			for (const [name, item] of Object.entries(this.state.options)) {
 				let output = `${space()}--${name}`
 				if (item.alias) {
 					output += `, -${item.alias}`
@@ -481,7 +477,7 @@ export class Cli<T extends ParsedArgs = any> {
 
 		if (!isEmpty(this.state.args)) {
 			helpOut('Arguments:')
-			for (let [name, item] of Object.entries(this.state.args)) {
+			for (const [name, item] of Object.entries(this.state.args)) {
 				let output = space() + name
 				if (item.description) {
 					output += space(2) + item.description
@@ -494,7 +490,7 @@ export class Cli<T extends ParsedArgs = any> {
 
 		if (!isEmpty(this.state.actions)) {
 			helpOut('Actions:')
-			for (let [name, item] of Object.entries(this.state.actions)) {
+			for (const [name, item] of Object.entries(this.state.actions)) {
 				let output = space() + [name].concat(item.aliases).join(', ')
 				if (item.description) {
 					output += space(2) + item.description
@@ -522,7 +518,7 @@ export class Cli<T extends ParsedArgs = any> {
 			return this.state.actions[key]
 		}
 
-		for (let action of Object.values(this.state.actions)) {
+		for (const action of Object.values(this.state.actions)) {
 			if (action.name === key) {
 				this.$out.debug('Found action', key)
 				return action
@@ -563,8 +559,8 @@ export class Cli<T extends ParsedArgs = any> {
 			this.cleanState()
 
 			return {...config, ...args}
-		}).catch(err => {
-			this.#out.fatal(err)
+		}).catch(error => {
+			this.#out.fatal(error)
 		})
 	}
 
@@ -631,7 +627,7 @@ export class Cli<T extends ParsedArgs = any> {
 						if (arg_index !== -1) {
 							argv.splice(argv.indexOf(count_arg), 1)
 						}
-						const num_arg = parseInt(count_arg_value)
+						const num_arg = Number.parseInt(count_arg_value)
 						if (isNumber(count_arg_value) && num_arg > 0) {
 							// add count_arg_value number of count_arg to argv
 							for (let i = 0; i < num_arg; i++) {
@@ -808,11 +804,11 @@ export class Cli<T extends ParsedArgs = any> {
 			this.cleanState()
 
 			return await handler(args, config)
-		} catch (e) {
+		} catch (error) {
 			if (this.state.bail) {
-				this.$out.fatal(`Action ${action} failed`, e)
+				this.$out.fatal(`Action ${action} failed`, error)
 			} else {
-				this.$out.error(`Action ${action} failed`, e)
+				this.$out.error(`Action ${action} failed`, error)
 				return false
 			}
 		}
@@ -856,7 +852,7 @@ export class Cli<T extends ParsedArgs = any> {
 			}
 		} else if (this.asAction) {
 			this.#out.debug('Checking for previously loaded config file')
-			config = {...config, ...loadedConfig() || {}}
+			config = {...config, ...loadedConfig()}
 		} else {
 			this.#out.warn('No config found.', `asAction: ${this.asAction}`)
 		}
@@ -873,8 +869,8 @@ export class Cli<T extends ParsedArgs = any> {
 			this.#out.debug('Running config handler')
 			try {
 				config = await Promise.resolve(this._configHandler(config))
-			} catch (e) {
-				this.#out.fatal('Config handler failed', e)
+			} catch (error) {
+				this.#out.fatal('Config handler failed', error)
 			}
 		}
 
