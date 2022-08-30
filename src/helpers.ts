@@ -89,7 +89,7 @@ export function parseDelimited(value) {
  * @param {array} args
  */
 export function chunkArguments(args) {
-	if (!args.find(x => x === '--')) {
+	if (!args.includes('--')) {
 		return [args]
 	}
 

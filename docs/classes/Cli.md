@@ -242,7 +242,9 @@ ___
 
 Enable config file support for the CLI, and define searching options.
 
-**`see`** [https://github.com/antonk52/lilconfig](https://github.com/antonk52/lilconfig)
+**`See`**
+
+[https://github.com/antonk52/lilconfig](https://github.com/antonk52/lilconfig)
 
 #### Parameters
 
@@ -462,7 +464,9 @@ ___
 
 Set a configuration option for the CLI
 
-**`throws`** {Error} - If the option is not supported
+**`Throws`**
+
+- If the option is not supported
 
 #### Type parameters
 

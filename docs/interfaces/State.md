@@ -1,5 +1,7 @@
 # Interface: State<T\>
 
+Settings and State *
+
 ## Type parameters
 
 | Name | Type |
