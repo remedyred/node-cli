@@ -16,7 +16,7 @@ specifiers:
   ts-jest: 28.0.8
   tsup: 6.2.3
   typedoc: 0.23.11
-  typedoc-plugin-markdown: 3.13.4
+  typedoc-plugin-markdown: 3.13.5
   typescript: 4.8.2
   yargs-parser: 21.1.1
 
@@ -39,7 +39,7 @@ devDependencies:
   ts-jest: 28.0.8_556mfp7b5dutuj2jcrj5i7zc5q
   tsup: 6.2.3_typescript@4.8.2
   typedoc: 0.23.11_typescript@4.8.2
-  typedoc-plugin-markdown: 3.13.4_typedoc@0.23.11
+  typedoc-plugin-markdown: 3.13.5_typedoc@0.23.11
   typescript: 4.8.2
 
 packages:
@@ -3893,8 +3893,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /typedoc-plugin-markdown/3.13.4_typedoc@0.23.11:
-    resolution: {integrity: sha512-E/EBBmu6ARtnbswZGtBVBB/BfukZiGMOlqPc0RXCI/NFitONBahFqbCAF5fKQlijlcfipJj5pw5AMFH3NytrAw==}
+  /typedoc-plugin-markdown/3.13.5_typedoc@0.23.11:
+    resolution: {integrity: sha512-E6bSn96MtiWTU4fr9wddD7d2T91XTtONj4Jdx2TZsjdAg/ig4ft2ECet/rNbBOiyw9MC0VO9toC/yvI8ZcY2PQ==}
     peerDependencies:
       typedoc: '>=0.23.0'
     dependencies:
