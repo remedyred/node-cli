@@ -491,7 +491,7 @@ export class Cli<T extends ParsedArgs = any> {
 		if (!isEmpty(this.state.actions)) {
 			helpOut('Actions:')
 			for (const [name, item] of Object.entries(this.state.actions)) {
-				let output = space() + [name].concat(item.aliases).join(', ')
+				let output = space() + [name, ...item.aliases].join(', ')
 				if (item.description) {
 					output += space(2) + item.description
 				}
@@ -594,12 +594,15 @@ export class Cli<T extends ParsedArgs = any> {
 				}
 			}
 
-			for (let [key, value] of Object.entries(preparsed)) {
-				const alias = objectFindKey(opts.alias, key)
+			for (const [unparsedKey, value] of Object.entries(preparsed)) {
+				let key: string
+				const alias = objectFindKey(opts.alias, unparsedKey)
 				if (alias) {
-					delete preparsed[key]
+					delete preparsed[unparsedKey]
 					key = alias
 					preparsed[key] = value
+				} else {
+					key = unparsedKey
 				}
 				if (opts.keys.includes(key)) {
 					delete preparsed[key]

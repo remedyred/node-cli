@@ -2,5 +2,8 @@
 	"root": true,
 	"extends": [
 		"@snickbit"
-	]
+	],
+	"rules": {
+		"jest/no-mocks-import": "off"
+	}
 }
