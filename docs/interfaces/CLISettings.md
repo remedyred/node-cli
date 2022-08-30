@@ -1,6 +1,6 @@
 # Interface: CLISettings
 
-Settings and State
+Settings and State *
 
 ## Hierarchy
 

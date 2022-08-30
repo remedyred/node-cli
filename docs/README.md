@@ -88,7 +88,7 @@ ___
 
 Ƭ **ArgV**: `string`[]
 
-Options and Arguments
+Options and Arguments *
 
 ___
 

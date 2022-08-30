@@ -18,7 +18,7 @@
 
 ▸ **Action**(`args`, `config`): `any`
 
-Actions
+Actions *
 
 #### Parameters
 
