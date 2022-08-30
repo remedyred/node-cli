@@ -38,7 +38,7 @@
 		"@snickbit/node-utilities": "4.4.9",
 		"@snickbit/out": "2.0.37",
 		"@snickbit/utilities": "3.2.0",
-		"lilconfig": "2.0.5",
+		"lilconfig": "2.0.6",
 		"yargs-parser": "21.0.1"
 	},
 	"devDependencies": {
