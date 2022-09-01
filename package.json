@@ -24,13 +24,13 @@
 		"docs": "typedoc",
 		"index": "indexer",
 		"test": "jest",
+		"test:ci": "jest --ci --onlyChanged",
 		"watch": "concurrently -k -c magenta,cyan pnpm:watch:*",
 		"watch:dev": "pnpm run dev --watch",
 		"watch:examples": "pnpm run build:examples --watch",
 		"watch:types": "pnpm run dev:types --watch"
 	},
 	"jest": {
-		"onlyChanged": true,
 		"preset": "ts-jest",
 		"testEnvironment": "node"
 	},
