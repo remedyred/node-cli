@@ -490,7 +490,7 @@ export class Cli<T extends ParsedArgs = any> {
 
 		if (!isEmpty(this.state.actions)) {
 			helpOut('Actions:')
-			for (const [name, item] of Object.entries(this.state.actions)) {
+			for (const [name, item] of Object.entries(this.state.actions) as [string, ActionDefinition]) {
 				let output = space() + [name, ...item.aliases].join(', ')
 				if (item.description) {
 					output += space(2) + item.description
@@ -518,7 +518,7 @@ export class Cli<T extends ParsedArgs = any> {
 			return this.state.actions[key]
 		}
 
-		for (const action of Object.values(this.state.actions)) {
+		for (const action of Object.values(this.state.actions) as ActionDefinition[]) {
 			if (action.name === key) {
 				this.$out.debug('Found action', key)
 				return action
