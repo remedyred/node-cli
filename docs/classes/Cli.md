@@ -115,7 +115,7 @@ Add a new action
 
 | Name | Type |
 | :------ | :------ |
-| `action` | [`ActionDefinition`](../README.md#actiondefinition) |
+| `action` | `ParsedImport` |
 
 #### Returns
 
@@ -160,7 +160,7 @@ Add new actions. Will override existing.
 
 | Name | Type |
 | :------ | :------ |
-| `actions` | `any` |
+| `actions` | `RawImports` |
 
 #### Returns
 
