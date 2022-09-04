@@ -30,6 +30,11 @@
 		"watch:examples": "pnpm run build:examples --watch",
 		"watch:types": "pnpm run dev:types --watch"
 	},
+	"release": {
+		"extends": [
+			"@snickbit/semantic-release"
+		]
+	},
 	"jest": {
 		"preset": "ts-jest",
 		"testEnvironment": "node"
