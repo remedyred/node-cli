@@ -4,7 +4,7 @@ specifiers:
   '@snickbit/eslint-config': 1.3.2
   '@snickbit/indexer': 2.5.12
   '@snickbit/node-utilities': 4.4.9
-  '@snickbit/out': 2.0.37
+  '@snickbit/out': 2.0.39
   '@snickbit/semantic-release': ^1.5.3
   '@snickbit/utilities': 3.4.2
   '@types/jest': 28.1.8
@@ -24,7 +24,7 @@ specifiers:
 
 dependencies:
   '@snickbit/node-utilities': 4.4.9
-  '@snickbit/out': 2.0.37
+  '@snickbit/out': 2.0.39
   '@snickbit/utilities': 3.4.2
   lilconfig: 2.0.6
   yargs-parser: 21.1.1
@@ -989,7 +989,14 @@ packages:
     resolution: {integrity: sha512-hP/kU0+g9hRuvv1dtPEpq6qdtd0rxdLFLj/GZ6f8PqxqFTdxj4OeWtFn64Xlr1scsAQz9PYFCmf4hZ6tO+fGrw==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/utilities': 3.4.2
+      '@snickbit/utilities': 3.4.4
+    dev: true
+
+  /@snickbit/cycle/1.0.3:
+    resolution: {integrity: sha512-WwW2I/odeRLsPhC3NPBx9VsdkJVpoKoip2qaBsXVmCFTg8WP3huDoXLE3RgQTcKaIvvrPWhwmK8uAQLTL+GbUw==}
+    engines: {node: '>= 12'}
+    dependencies:
+      '@snickbit/utilities': 3.4.4
 
   /@snickbit/eslint-config/1.3.2_njvpd7oexm4jrpqkdx4xx3mxbm:
     resolution: {integrity: sha512-m6qtuXzgWSVLGA4H0HIScP4/LuPW1OFAwG6rlQuwFypBHoBRV19paFxRL+gGVzcFAlzA5YdwHPlGtsxpEbqEtA==}
@@ -1036,7 +1043,7 @@ packages:
     engines: {node: '>= 12'}
     dependencies:
       '@snickbit/node-utilities': 4.4.9
-      '@snickbit/out': 2.0.37
+      '@snickbit/out': 2.0.39
       '@snickbit/utilities': 3.4.2
       lilconfig: 2.0.6
       yargs-parser: 21.1.1
@@ -1046,7 +1053,7 @@ packages:
     resolution: {integrity: sha512-FZPHi2JhujSIwGi113iHz2+0G9mEBR0m1H8y87kY9Sov3PdzCuBq8zBoy+i2cWjJzPHQj++MhLyCXmu2ArBOlg==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/out': 2.0.37
+      '@snickbit/out': 2.0.39
       '@snickbit/utilities': 3.4.2
       ansi-styles-template: 1.0.0
       cli-progress: 3.11.2
@@ -1066,9 +1073,26 @@ packages:
       browser-or-node: 2.0.0
       node-inspect-extracted: 1.1.0
       picomatch-browser: 2.2.6
+    dev: true
+
+  /@snickbit/out/2.0.39:
+    resolution: {integrity: sha512-iEI2vveTraYiRLyxjRPX5wNJv2AjuFOf+goEA3z7pc/FNSpNz/r+fvggVXp3SOnSzzsfXntz6Wb2/rfuvUwMWQ==}
+    engines: {node: '>= 12'}
+    dependencies:
+      '@snickbit/ansi': 0.0.13
+      '@snickbit/cycle': 1.0.3
+      '@snickbit/utilities': 3.4.4
+      ansi-styles-template: 1.0.0
+      browser-or-node: 2.0.0
+      node-inspect-extracted: 1.1.0
+      picomatch-browser: 2.2.6
 
   /@snickbit/plural/0.0.6:
     resolution: {integrity: sha512-Bmxmhi984QgV+Yo5T4uMuKGmfgkkv7BpFkfo0p1di/4ZZt379vDTOLCPf3+HZec12pabMFUCHcq8vyxjUCxcDA==}
+    engines: {node: '>= 12'}
+
+  /@snickbit/plural/1.0.3:
+    resolution: {integrity: sha512-lHMDzr6zmAwZ68QnlJ/jyu/m/4pfUHqgehbyMLNW3gFd0IwjmzkNNG49GlgYBgivK1O4tSE2ahvDd4sTt9EY8g==}
     engines: {node: '>= 12'}
 
   /@snickbit/semantic-release/1.5.3_semantic-release@19.0.5:
@@ -1094,6 +1118,14 @@ packages:
     engines: {node: '>= 12'}
     dependencies:
       '@snickbit/plural': 0.0.6
+      just-camel-case: 6.1.1
+      nanoid: 3.3.4
+
+  /@snickbit/utilities/3.4.4:
+    resolution: {integrity: sha512-sWogjyJBogUQtEe45B6p7koarL1n2PF6Hxf/0Y1VkCXSBGnd2uaQpm7a76GN8wZw8zM5vldMA/sMN03HksINkg==}
+    engines: {node: '>= 12'}
+    dependencies:
+      '@snickbit/plural': 1.0.3
       just-camel-case: 6.1.1
       nanoid: 3.3.4
 
