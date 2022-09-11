@@ -1,6 +1,6 @@
 {
 	"name": "@snickbit/node-cli",
-	"version": "3.0.15",
+	"version": "3.0.16",
 	"description": "Simple Node.js CLI framework for creating command line applications.",
 	"license": "MIT",
 	"exports": {
