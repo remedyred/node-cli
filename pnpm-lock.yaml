@@ -1066,8 +1066,8 @@ packages:
       yargs-parser: 21.1.1
     dev: true
 
-  /@snickbit/node-utilities/4.4.9:
-    resolution: {integrity: sha512-FZPHi2JhujSIwGi113iHz2+0G9mEBR0m1H8y87kY9Sov3PdzCuBq8zBoy+i2cWjJzPHQj++MhLyCXmu2ArBOlg==}
+  /@snickbit/node-utilities/4.4.10:
+    resolution: {integrity: sha512-Auq7DSIWHNQ+2lv5rTeEYL4pvmDdbEaioMScoW+yoMS39aXnHR7V5mIm1AlBSz04gB9E99xaBdWtttNEgSSHyw==}
     engines: {node: '>= 12'}
     dependencies:
       '@snickbit/out': 2.0.45
