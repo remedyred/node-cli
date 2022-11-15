@@ -1,14 +1,18 @@
-name: CI
+name: Release
 
 on:
-  pull_request:
-    types: [opened, synchronize]
+  push:
+    branches:
+      - main
 
 jobs:
-  build:
-    name: Build, lint, and Test
-    timeout-minutes: 5
+  release:
+    name: Release
+    timeout-minutes: 10
     runs-on: ubuntu-latest
     steps:
-      - name: Build, Test, and Lint
-        uses: remedyred/build-and-test-action@v1.0.8
+      - name: Release
+        uses: remedyred/release-please-action@v1.3.20
+        with:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
