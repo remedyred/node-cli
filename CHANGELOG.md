@@ -1,5 +1,12 @@
 # @snickbit/node-cli
 
+## [3.0.25](https://github.com/remedyred/node-cli/compare/v3.0.24...v3.0.25) (2022-11-15)
+
+
+### Bug Fixes
+
+* rollback eslint to 8.22.0 ([f4fb26b](https://github.com/remedyred/node-cli/commit/f4fb26b760486b406b793c69fb9e523c3790dadc))
+
 ## 3.0.3
 
 ### Patch Changes
