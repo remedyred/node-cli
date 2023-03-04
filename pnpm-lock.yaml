@@ -9,7 +9,7 @@ specifiers:
   '@snickbit/utilities': 3.4.3
   '@types/jest': 29.1.1
   '@types/node': 18.6.4
-  concurrently: 7.3.0
+  concurrently: 7.6.0
   eslint: 8.24.0
   jest: 28.1.3
   lilconfig: 2.0.6
@@ -35,12 +35,12 @@ devDependencies:
   '@snickbit/semantic-release': 1.5.3_semantic-release@19.0.5
   '@types/jest': 29.1.1
   '@types/node': 18.6.4
-  concurrently: 7.3.0
+  concurrently: 7.6.0
   eslint: 8.24.0
   jest: 28.1.3_@types+node@18.6.4
   semantic-release: 19.0.5
   shx: 0.3.4
-  ts-jest: 28.0.8_2vgmloqrfrhgisrtl3rdkbzebm
+  ts-jest: 28.0.8_fztrhi54teek7om3xmnfwid3mq
   tsup: 6.2.3_typescript@4.8.4
   typedoc: 0.23.11_typescript@4.8.4
   typedoc-plugin-markdown: 3.13.6_typedoc@0.23.11
@@ -1015,7 +1015,7 @@ packages:
     resolution: {integrity: sha512-7BH1TBJZv7bxdsvhdtM0r79bLSjbR2Yef63nSSVHNez2Y3JWUF2N76Um4catkMx69PXL2fZFkK09MZwn7hyfWw==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/utilities': 3.4.9
+      '@snickbit/utilities': 3.4.3
 
   /@snickbit/eslint-config/1.3.2_wikzf3zjzdwilmbukvfvhniz4m:
     resolution: {integrity: sha512-m6qtuXzgWSVLGA4H0HIScP4/LuPW1OFAwG6rlQuwFypBHoBRV19paFxRL+gGVzcFAlzA5YdwHPlGtsxpEbqEtA==}
@@ -1063,7 +1063,7 @@ packages:
     dependencies:
       '@snickbit/node-utilities': 4.4.10
       '@snickbit/out': 2.0.45
-      '@snickbit/utilities': 3.4.9
+      '@snickbit/utilities': 3.4.3
       lilconfig: 2.0.6
       yargs-parser: 21.1.1
     dev: true
@@ -1073,7 +1073,7 @@ packages:
     engines: {node: '>= 12'}
     dependencies:
       '@snickbit/out': 2.0.45
-      '@snickbit/utilities': 3.4.9
+      '@snickbit/utilities': 3.4.3
       ansi-styles-template: 1.0.0
       cli-progress: 3.11.2
       is-wsl: 2.2.0
@@ -1086,7 +1086,7 @@ packages:
     engines: {node: '>= 12'}
     dependencies:
       '@snickbit/out': 2.0.45
-      '@snickbit/utilities': 3.4.9
+      '@snickbit/utilities': 3.4.3
       ansi-styles-template: 1.0.0
       cli-progress: 3.11.2
       is-wsl: 2.2.0
@@ -1101,7 +1101,7 @@ packages:
     dependencies:
       '@snickbit/ansi': 0.0.18
       '@snickbit/cycle': 1.0.5
-      '@snickbit/utilities': 3.4.9
+      '@snickbit/utilities': 3.4.3
       ansi-styles-template: 1.0.0
       browser-or-node: 2.0.0
       node-inspect-extracted: 1.1.0
@@ -1114,7 +1114,7 @@ packages:
     dependencies:
       '@snickbit/ansi': 0.0.18
       '@snickbit/cycle': 1.0.5
-      '@snickbit/utilities': 3.4.9
+      '@snickbit/utilities': 3.4.3
       ansi-styles-template: 1.0.0
       browser-or-node: 2.0.0
       node-inspect-extracted: 1.1.0
@@ -1125,9 +1125,9 @@ packages:
     engines: {node: '>= 12'}
     dev: true
 
-  /@snickbit/plural/1.0.5:
-    resolution: {integrity: sha512-qIBAHsP0+tYTPj/aDF1wZRVWfW4YcsS12INoyO+UonEthNmxQozlM/0Bp2P/XYYrsx4ag0Psv53hN4PzrMcwjA==}
-    engines: {node: '>= 12'}
+  /@snickbit/plural/1.0.14:
+    resolution: {integrity: sha512-i3A2CllbJ1a+xNwQ/n/HBCTdFTwdCdKrlDvrwg2rrTXzKFhkFpE3/GUXxDnobZJUhMSyFnVFF6yvN2BSnZBKHQ==}
+    engines: {node: '>= 14.17'}
 
   /@snickbit/semantic-release/1.5.3_semantic-release@19.0.5:
     resolution: {integrity: sha512-hOOuP2TOUMLQmbVZiJrR/vPCDR8MZgQhFhM5Sl0K/jfRaz2AYgQg+LUvTevonXepYUFfVqXxAwuXX+XGP5WbGQ==}
@@ -1152,7 +1152,7 @@ packages:
     engines: {node: '>= 12'}
     dependencies:
       '@snickbit/plural': 0.0.6
-      just-camel-case: 6.1.1
+      just-camel-case: 6.2.0
       nanoid: 3.3.4
     dev: true
 
@@ -1160,17 +1160,8 @@ packages:
     resolution: {integrity: sha512-G9JGD1RUOkJnDDnmMFAN175BlQ6euKN+AGFnRgvSIsyaWct+Pl2MhG0VrUp5FcYSUJ2VzrJXsYdIpbXiWg1H/g==}
     engines: {node: '>= 12'}
     dependencies:
-      '@snickbit/plural': 1.0.5
-      just-camel-case: 6.1.1
-      nanoid: 3.3.4
-    dev: false
-
-  /@snickbit/utilities/3.4.9:
-    resolution: {integrity: sha512-yQCkxJnpQ0qYTiX8lZ0k2X44IlH+xOHIH5rGnQVtQDleQXKC7Yt/sokBbdv+6kEPrv6EfugRpwtOUdcb/ouZHQ==}
-    engines: {node: '>= 12'}
-    dependencies:
-      '@snickbit/plural': 1.0.5
-      just-camel-case: 6.1.1
+      '@snickbit/plural': 1.0.14
+      just-camel-case: 6.2.0
       nanoid: 3.3.4
 
   /@tootallnate/once/2.0.0:
@@ -1904,8 +1895,8 @@ packages:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: true
 
-  /concurrently/7.3.0:
-    resolution: {integrity: sha512-IiDwm+8DOcFEInca494A8V402tNTQlJaYq78RF2rijOrKEk/AOHTxhN4U1cp7GYKYX5Q6Ymh1dLTBlzIMN0ikA==}
+  /concurrently/7.6.0:
+    resolution: {integrity: sha512-BKtRgvcJGeZ4XttiDiNcFiRlxoAeZOseqUvyYRUp/Vtd+9p1ULmeoSqGsDA+2ivdeDFpqrJvGvmI+StKfKl5hw==}
     engines: {node: ^12.20.0 || ^14.13.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -3865,8 +3856,8 @@ packages:
     engines: {'0': node >= 0.2.0}
     dev: true
 
-  /just-camel-case/6.1.1:
-    resolution: {integrity: sha512-tDZNyw8wBZM9vdUfAtG9HmKonj5NzP1pKN52IabSNbMR/SXNf67FAW1QAdx2dC1ZSxubQyr/1fiYVpr5ebN8lQ==}
+  /just-camel-case/6.2.0:
+    resolution: {integrity: sha512-ICenRLXwkQYLk3UyvLQZ+uKuwFVJ3JHFYFn7F2782G2Mv2hW8WPePqgdhpnjGaqkYtSVWnyCESZhGXUmY3/bEg==}
 
   /kind-of/6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
@@ -5346,7 +5337,7 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /ts-jest/28.0.8_2vgmloqrfrhgisrtl3rdkbzebm:
+  /ts-jest/28.0.8_fztrhi54teek7om3xmnfwid3mq:
     resolution: {integrity: sha512-5FaG0lXmRPzApix8oFG8RKjAz4ehtm8yMKOTy5HX3fY6W8kmvOrmcY0hKDElW52FJov+clhUbrKAqofnj4mXTg==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
@@ -5367,9 +5358,7 @@ packages:
       esbuild:
         optional: true
     dependencies:
-      '@babel/core': 7.19.0
       bs-logger: 0.2.6
-      esbuild: 0.15.7
       fast-json-stable-stringify: 2.1.0
       jest: 28.1.3_@types+node@18.6.4
       jest-util: 28.1.3
