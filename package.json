@@ -38,28 +38,28 @@
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@snickbit/node-utilities": "4.4.10",
-		"@snickbit/out": "2.0.45",
-		"@snickbit/utilities": "3.4.3",
-		"lilconfig": "2.0.6",
+		"@snickbit/node-utilities": "4.7.2",
+		"@snickbit/out": "2.0.48",
+		"@snickbit/utilities": "3.8.2",
+		"lilconfig": "2.1.0",
 		"yargs-parser": "21.1.1"
 	},
 	"devDependencies": {
-		"@snickbit/eslint-config": "1.3.2",
-		"@snickbit/indexer": "2.5.17",
-		"@snickbit/semantic-release": "^1.5.3",
-		"@types/jest": "29.1.1",
-		"@types/node": "18.6.4",
-		"concurrently": "7.3.0",
-		"eslint": "8.24.0",
+		"@snickbit/eslint-config": "1.5.1",
+		"@snickbit/indexer": "^2.7.1",
+		"@snickbit/semantic-release": "^1.6.3",
+		"@types/jest": "29.5.1",
+		"@types/node": "18.15.11",
+		"concurrently": "7.6.0",
+		"eslint": "8.38.0",
 		"jest": "28.1.3",
 		"semantic-release": "^19.0.5",
 		"shx": "0.3.4",
 		"ts-jest": "28.0.8",
-		"tsup": "6.2.3",
-		"typedoc": "0.23.11",
-		"typedoc-plugin-markdown": "3.13.6",
-		"typescript": "4.8.4"
+		"tsup": "6.7.0",
+		"typedoc": "0.24.4",
+		"typedoc-plugin-markdown": "3.15.1",
+		"typescript": "4.9.5"
 	},
 	"engines": {
 		"node": ">= 12"
