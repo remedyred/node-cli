@@ -110,13 +110,16 @@ export function chunkArguments(args) {
 /** @internal */
 export function formatValue(value: any, type?: string) {
 	switch (type) {
-		case 'boolean':
+		case 'boolean': {
 			return String(value) === 'true'
-		case 'number':
+		}
+		case 'number': {
 			return Number(value)
-		case 'string':
+		}
+		case 'string': {
 			return String(value)
-		default:
+		}
+		default: {
 			if (isNumber(value)) {
 				return Number(value)
 			} else if (value === 'true' || value === 'false') {
@@ -127,6 +130,7 @@ export function formatValue(value: any, type?: string) {
 				return value
 			}
 			return String(value)
+		}
 	}
 }
 

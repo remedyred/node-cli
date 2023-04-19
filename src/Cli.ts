@@ -1,9 +1,49 @@
 import {fileExists, findUp, getFileJson, parseImports} from '@snickbit/node-utilities'
 import {Out} from '@snickbit/out'
-import {arrayWrap, camelCase, isArray, isCallable, isEmpty, isNumber, kebabCase, objectClone, objectFindKey, parseOptions, typeOf} from '@snickbit/utilities'
-import {Action, ActionDefinition, Actions, Arg, Args, CLISettings, ConfigHandler, Option, Options, ParsedArgs, RawActions, State} from './definitions'
+import {
+	arrayWrap,
+	camelCase,
+	isArray,
+	isCallable,
+	isEmpty,
+	isNumber,
+	kebabCase,
+	objectClone,
+	objectFindKey,
+	parseOptions,
+	typeOf
+} from '@snickbit/utilities'
+import {
+	Action,
+	ActionDefinition,
+	Actions,
+	Arg,
+	Args,
+	CLISettings,
+	ConfigHandler,
+	Option,
+	Options,
+	ParsedArgs,
+	RawActions,
+	State
+} from './definitions'
 import {allowed_keys, default_state, loadedConfig} from './config'
-import {chunkArguments, CliOption, CliOptions, default_options, extra_options, formatValue, helpOut, hideBin, object_options, option_not_predicate, options_equal_predicate, parseDelimited, printLine, space} from './helpers'
+import {
+	chunkArguments,
+	CliOption,
+	CliOptions,
+	default_options,
+	extra_options,
+	formatValue,
+	helpOut,
+	hideBin,
+	object_options,
+	option_not_predicate,
+	options_equal_predicate,
+	parseDelimited,
+	printLine,
+	space
+} from './helpers'
 import {lilconfig, LilconfigResult, Options as ConfigOptions} from 'lilconfig'
 import parser from 'yargs-parser'
 
@@ -94,14 +134,7 @@ export class Cli<T extends ParsedArgs = any> {
 
 	set<O extends keyof CLISettings>(optionOrOptions: CLISettings | O, value?: any): State<T>[O] | this {
 		// multiple options
-		if (typeof optionOrOptions !== 'string') {
-			const options = optionOrOptions as CLISettings
-			if (typeof options === 'object' && Object.keys(options).every(k => allowed_keys.includes(k))) {
-				this.state = {...this.state || default_state, ...options}
-			} else {
-				throw new Error('Invalid options')
-			}
-		} else { // single option
+		if (typeof optionOrOptions === 'string') { // single option
 			const option = optionOrOptions as O
 
 			if (option === 'out') {
@@ -116,6 +149,13 @@ export class Cli<T extends ParsedArgs = any> {
 				this.state[option] = value
 			} else {
 				throw new Error(`Unknown option: ${option}`)
+			}
+		} else {
+			const options = optionOrOptions as CLISettings
+			if (typeof options === 'object' && Object.keys(options).every(k => allowed_keys.includes(k))) {
+				this.state = {...this.state || default_state, ...options}
+			} else {
+				throw new Error('Invalid options')
 			}
 		}
 
@@ -141,8 +181,20 @@ export class Cli<T extends ParsedArgs = any> {
 			config = handlerOrConfig as ConfigOptions | false
 		}
 
-		if (config !== false) {
-			config = config || {}
+		if (config === false) {
+			if (this.state.config) {
+				delete this.state.config
+			}
+
+			if (this.state.options['config'] && this.state.options['config'].preset) {
+				delete this.state.options['config']
+			}
+
+			if (this.state.default_config) {
+				delete this.state.default_config
+			}
+		} else {
+			config ||= {}
 			this.state = {
 				...this.state,
 				config: {
@@ -173,23 +225,15 @@ export class Cli<T extends ParsedArgs = any> {
 					preset: true
 				})
 			}
-		} else {
-			if (this.state.config) {
-				delete this.state.config
-			}
-
-			if (this.state.options['config'] && this.state.options['config'].preset) {
-				delete this.state.options['config']
-			}
-
-			if (this.state.default_config) {
-				delete this.state.default_config
-			}
 		}
 
 		return this
 	}
 
+	/**
+	 * Set the config handler for the CLI.
+	 * @param { (config) => config | Promise<config> } handler
+	 */
 	configHandler(handler: ConfigHandler) {
 		this._configHandler = handler
 	}
@@ -220,9 +264,7 @@ export class Cli<T extends ParsedArgs = any> {
 
 		this.state.actions[action.name] = action
 
-		if (!this.state.args) {
-			this.state.args = {}
-		}
+		this.state.args ||= {}
 
 		if (!this.state.args?.action) {
 			this.state.args.action = {
@@ -241,18 +283,14 @@ export class Cli<T extends ParsedArgs = any> {
 		const opts: Partial<CliOptions> = {...default_options}
 
 		function pushOpts(key, value) {
-			if (!opts[key]) {
-				opts[key] = []
-			}
+			opts[key] ||= []
 			if (!opts[key].includes(value)) {
 				opts[key].push(value)
 			}
 		}
 
 		function pushKey(opt: CliOption) {
-			if (!opts.keys) {
-				opts.keys = []
-			}
+			opts.keys ||= []
 			if (!opts.keys.includes(opt)) {
 				opts.keys.push(opt)
 			}
@@ -261,24 +299,18 @@ export class Cli<T extends ParsedArgs = any> {
 		// loop through all options
 		for (const [opt, config] of Object.entries(this.state.options)) {
 			// loop through all configuration entries
-			if (!config.type) {
-				config.type = 'boolean'
-			}
+			config.type ||= 'boolean'
 			for (const [key, value] of Object.entries(config)) {
 				if (key in opts) {
 					if (object_options.includes(key)) {
-						if (!opts[key]) {
-							opts[key] = {}
-						}
+						opts[key] ||= {}
 						opts[key][opt] = value
 					} else {
 						pushOpts(key, value)
 						pushKey(opt)
 					}
 				} else if (key === 'type' && typeof value === 'string' && value in opts) {
-					if (!opts[value]) {
-						opts[value] = []
-					}
+					opts[value] ||= []
 					pushOpts(value, opt)
 					pushKey(opt)
 				} else if (!extra_options.includes(key)) {
@@ -490,7 +522,7 @@ export class Cli<T extends ParsedArgs = any> {
 
 		if (!isEmpty(this.state.actions)) {
 			helpOut('Actions:')
-			for (const [name, item] of Object.entries(this.state.actions) as [string, ActionDefinition]) {
+			for (const [name, item] of Object.entries(this.state.actions) as [string, ActionDefinition][]) {
 				let output = space() + [name, ...item.aliases].join(', ')
 				if (item.description) {
 					output += space(2) + item.description
@@ -596,7 +628,7 @@ export class Cli<T extends ParsedArgs = any> {
 
 			for (const [unparsedKey, value] of Object.entries(preparsed)) {
 				let key: string
-				const alias = objectFindKey(opts.alias, unparsedKey)
+				const alias = String(objectFindKey(opts.alias, unparsedKey))
 				if (alias) {
 					delete preparsed[unparsedKey]
 					key = alias

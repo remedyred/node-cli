@@ -115,7 +115,7 @@ Add a new action
 
 | Name | Type |
 | :------ | :------ |
-| `action` | `ParsedImport` |
+| `action` | [`ActionDefinition`](../README.md#actiondefinition) |
 
 #### Returns
 
@@ -160,7 +160,7 @@ Add new actions. Will override existing.
 
 | Name | Type |
 | :------ | :------ |
-| `actions` | `RawImports` |
+| `actions` | `any` |
 
 #### Returns
 
@@ -276,6 +276,8 @@ ___
 ### configHandler
 
 ▸ **configHandler**(`handler`): `void`
+
+Set the config handler for the CLI.
 
 #### Parameters
 
