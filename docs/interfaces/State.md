@@ -45,7 +45,7 @@ ___
 
 ### actions
 
-• **actions**: `ParsedImportRecords`
+• **actions**: `Partial`<[`Actions`](../README.md#actions)\>
 
 ___
 
