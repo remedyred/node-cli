@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 jobs:
@@ -16,11 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build, Test, and Lint
-        uses: remedyred/check-action@v1.1.14
+        uses: remedyred/check-action@v1.2.7
         with:
           NO_BAIL: true
           AUTO_COMMIT: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Release
         run: pnpm semantic-release
