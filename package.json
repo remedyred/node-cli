@@ -38,9 +38,9 @@
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@snickbit/node-utilities": "4.7.2",
-		"@snickbit/out": "2.0.48",
-		"@snickbit/utilities": "3.8.2",
+		"@snickbit/node-utilities": "4.7.7",
+		"@snickbit/out": "2.1.4",
+		"@snickbit/utilities": "3.11.1",
 		"lilconfig": "2.1.0",
 		"yargs-parser": "21.1.1"
 	},
