@@ -16,19 +16,17 @@
 	],
 	"scripts": {
 		"build": "indexer && tsup --minify --dts",
-		"lint": "eslint \"src/**/*.{ts,js,json,yml,yaml}\" --color --cache}",
-		"lint:fix": "pnpm run lint --fix",
 		"build:examples": "tsup examples/**/*.ts --outDir dist/examples --format cjs",
-		"clean": "shx rm -rf ./dist",
-		"dev": "tsup",
-		"dev:types": "tsc --project tsconfig.types.json",
+		"check": "pnpm run lint && pnpm run typecheck",
+		"dev": "tsup --watch",
+		"dev:examples": "pnpm run build:examples --watch",
 		"docs": "typedoc",
 		"index": "indexer --watch",
+		"lint": "eslint \"src/**/*.{ts,js,json,yml,yaml}\" --color --cache}",
+		"lint:fix": "pnpm run lint --fix",
 		"test": "jest",
 		"test:ci": "jest --ci --onlyChanged",
-		"watch": "concurrently -k -c magenta,cyan pnpm:watch:*",
-		"watch:dev": "pnpm run dev --watch",
-		"watch:examples": "pnpm run build:examples --watch"
+		"typecheck": "tsc --noEmit"
 	},
 	"release": {
 		"extends": [
@@ -64,7 +62,7 @@
 		"typescript": "4.9.5"
 	},
 	"engines": {
-		"node": ">= 12"
+		"node": ">= 14.17"
 	},
 	"my-cli": {
 		"src": "./src/cli.ts",
@@ -75,7 +73,7 @@
 			"src/index.ts"
 		],
 		"clean": true,
-		"onSuccess": "pnpm run dev:types",
+		"dts": true,
 		"format": [
 			"esm",
 			"cjs"
