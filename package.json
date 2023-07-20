@@ -40,7 +40,7 @@
 	"dependencies": {
 		"@snickbit/node-utilities": "4.7.8",
 		"@snickbit/out": "2.1.4",
-		"@snickbit/utilities": "3.11.2",
+		"@snickbit/utilities": "3.11.1",
 		"lilconfig": "2.1.0",
 		"yargs-parser": "21.1.1"
 	},
