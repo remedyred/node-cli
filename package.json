@@ -38,15 +38,15 @@
 		"testEnvironment": "node"
 	},
 	"dependencies": {
-		"@snickbit/node-utilities": "4.7.7",
+		"@snickbit/node-utilities": "4.7.8",
 		"@snickbit/out": "2.1.4",
-		"@snickbit/utilities": "3.11.1",
+		"@snickbit/utilities": "3.11.2",
 		"lilconfig": "2.1.0",
 		"yargs-parser": "21.1.1"
 	},
 	"devDependencies": {
 		"@snickbit/eslint-config": "1.5.1",
-		"@snickbit/indexer": "^2.7.1",
+		"@snickbit/indexer": "^2.8.4",
 		"@snickbit/semantic-release": "^1.6.3",
 		"@types/jest": "29.5.1",
 		"@types/node": "18.15.11",
